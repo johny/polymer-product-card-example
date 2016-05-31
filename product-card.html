@@ -1,0 +1,60 @@
+<!-- import latest release version of all components from polygit -->
+<link rel="import" href="https://polygit.org/components/polymer/polymer.html">
+
+<dom-module id="product-card">
+  <template>
+    <style>
+      /* local DOM styles go here */
+      :host {
+        display: inline-block;
+        font-family: Helvetica;
+      }
+      
+      .b-product-card {
+        border: 1px solid #eee;
+        padding: 1px;
+      }
+      
+      .b-product-card__image-wrapper {
+        min-height: 100px;
+      }
+      
+      .b-product-card__image {
+        display: block;
+        width: 100%;
+      }
+      
+      .b-product-card__title {
+        padding: 1rem;
+        background: #fafafa;
+      }
+      
+      .b-product-card__content {
+        padding: 1rem;
+      }
+      
+    </style>
+    <!-- local DOM goes here -->
+    
+    <div class="b-product-card">
+      
+      <div class="b-product-card__image-wrapper">
+        <img src="[[image]]" title="[[title]]" class="b-product-card__image"/>
+      </div>
+      
+      <div class="b-product-card__title">
+        <strong><content select=".title"></content></strong>
+      </div>
+      
+      <content select="product-card-description"></content>
+
+    </div>
+    
+  </template>
+  <script>
+  Polymer({
+    is: 'product-card',
+  });
+  </script>
+
+</dom-module>
